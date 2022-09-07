@@ -8,6 +8,7 @@ import Account from './components/Account';
 import Application from './components/Application';
 import Archive from './components/Archive';
 import Interview from './components/Interview'
+import Study from './components/Study';
 
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
           <Route path='/account' element={<Account />} />
           <Route path='/applications' element={<Application />} />
           <Route path='/archives' element={<Archive />} />
-          <Route path='/interviews' element={<Interview />} /> 
+          <Route path='/interviews' element={<Interview />} />
+          <Route path='/studies' element={<Study />} /> 
         </Routes>
       </main>
     </div>
