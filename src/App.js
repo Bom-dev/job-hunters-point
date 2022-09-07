@@ -16,31 +16,13 @@ function App() {
     getAllUser()
   }, [])
 
-  // const getAllUser = () => {
-  //   axios.get(`https://job-hunters-point.herokuapp.com/users/`)
-  //   .then((r) => {
-  //       console.log(r.data)
-  //   })
-  //   .catch(e => {
-  //       console.log(e)
-  //   })
-  // }
-
-  const getAllUser = () => {
-    axios({
-      method: 'get',
-      url: `https://job-hunters-point.herokuapp.com/users/`,
-      headers: {
-        'Access-Control-Allow-Origin': 'https://localhost:3000',
-        'Access-Control-Allow-Headers': 'origin',
-        'Access-Control-Allow-Credentials': true,
-        crossorigin: true,
-      }
-    }).then(r => {
-      console.log(r)
-    }).catch(e => {
-      console.log(e)
-    })
+  async function getAllUser() {
+    try {
+      const r = await axios.get(`https://job-hunters-point.herokuapp.com/users/`)
+      console.log(r.data)
+    } catch (e) {
+      console.error(e)
+    }
   }
 
   return (
