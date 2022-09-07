@@ -1,12 +1,12 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 
-const Home = () => {
+const Interview = () => {
     return (
         <div>
-            Home is working
+            Interview is working
         </div>
     )
 }
 
-export default Home
+export default Interview
