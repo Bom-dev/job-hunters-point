@@ -7,10 +7,10 @@ const Application = () => {
     const [application, setApplication] = useState([])
 
     useEffect(() => {
-        getAllUser()
+        getAllApplication()
     }, [])
     
-    async function getAllUser() {
+    async function getAllApplication() {
         try {
             const r = await axios.get(`https://job-hunters-point.herokuapp.com/users/1/applications/`)
             setApplication(r.data)
@@ -24,16 +24,15 @@ const Application = () => {
             <div key={`${item.title}${item.date}`}>
                 <h3>{item.title}</h3>
                 <h5>{item.date}</h5>
-                <h5>
-                    {item.counter ? `Counter: ${item.counter}` : null}
-                </h5>
+                <h5>{item.counter ? `Counter: ${item.counter}` : null}</h5>
+                <p>{item.comment ? `Notes: ${item.comment}` : null}</p>
             </div>
         )
     })
 
     return (
         <div>
-            this is working
+            <h2>Applications</h2>
             {applications}
         </div>
     )
